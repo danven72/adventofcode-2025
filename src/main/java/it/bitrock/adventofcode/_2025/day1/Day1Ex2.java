@@ -1,5 +1,8 @@
 package it.bitrock.adventofcode._2025.day1;
 
+import it.bitrock.adventofcode._2025.day1.safe.SafeDay1Part2;
+import it.bitrock.adventofcode._2025.day1.safe.Safe;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -8,7 +11,7 @@ import java.util.List;
 public class Day1Ex2 {
     private final static String INPUT_DAY1_FILE_PATH = "src/main/resources/input/day1-ex1.txt";
 
-    private SafeDay1Part2 safe = new SafeDay1Part2();
+    private Safe safe = new SafeDay1Part2();
 
     public Day1Ex2()  {
     }

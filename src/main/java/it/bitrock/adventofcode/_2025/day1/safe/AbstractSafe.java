@@ -1,14 +1,14 @@
-package it.bitrock.adventofcode._2025.day1;
+package it.bitrock.adventofcode._2025.day1.safe;
 
 import java.util.List;
 
-public abstract class AbstractSafe implements SafeITF {
+public abstract class AbstractSafe implements Safe {
 
     protected Integer position;
     protected Integer zeroClicks = 0;
-    protected final StringBuilder output = new StringBuilder();
+    private final StringBuilder output = new StringBuilder();
 
-    public AbstractSafe() {
+    protected AbstractSafe() {
         this.position = 50;
     }
 
@@ -34,6 +34,10 @@ public abstract class AbstractSafe implements SafeITF {
         else throw new IllegalArgumentException("Invalid command");
         System.out.println(output.toString());
         output.setLength(0);
+    }
+
+    protected void appendOutput() {
+        output.append("New position: ").append(position).append(", Total zero clicks: ").append(zeroClicks).append("\n");
     }
 
     public Integer getPosition() {
