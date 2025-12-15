@@ -8,7 +8,7 @@ import java.util.List;
 public class Day1Ex2 {
     private final static String INPUT_DAY1_FILE_PATH = "src/main/resources/input/day1-ex1.txt";
 
-    private Safe safe = new Safe();
+    private SafeDay1Part2 safe = new SafeDay1Part2();
 
     public Day1Ex2()  {
     }
