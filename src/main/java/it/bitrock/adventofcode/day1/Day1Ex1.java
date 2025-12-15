@@ -1,6 +1,6 @@
-package it.bitrock.adventofcode._2025.day1;
+package it.bitrock.adventofcode.day1;
 
-import it.bitrock.adventofcode._2025.day1.safe.SafeDay1Part1;
+import it.bitrock.adventofcode.day1.safe.SafeDay1Part1;
 
 public class Day1Ex1 extends AbstractDay1 {
 

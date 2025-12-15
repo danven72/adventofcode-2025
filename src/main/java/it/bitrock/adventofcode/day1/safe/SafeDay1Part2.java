@@ -1,4 +1,4 @@
-package it.bitrock.adventofcode._2025.day1.safe;
+package it.bitrock.adventofcode.day1.safe;
 
 
 public class SafeDay1Part2 extends AbstractSafe {
