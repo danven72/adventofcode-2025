@@ -45,35 +45,37 @@ class IdRangesExplorerTest {
         IdRangesExplorer explorer = new IdRangesExplorer();
         var wrongIds = explorer.findWrongIds("11-22");
         assertEquals(2, wrongIds.size());
-        assertTrue(wrongIds.contains(11));
-        assertTrue(wrongIds.contains(22));
+        assertTrue(wrongIds.contains(11L));
+        assertTrue(wrongIds.contains(22L));
 
         wrongIds = explorer.findWrongIds("95-115");
-        assertEquals(1, wrongIds.size());
-        assertTrue(wrongIds.contains(99));
+        assertEquals(1L, wrongIds.size());
+        assertTrue(wrongIds.contains(99L));
 
         wrongIds = explorer.findWrongIds("998-1012");
         assertEquals(1, wrongIds.size());
-        assertTrue(wrongIds.contains(1010));
+        assertTrue(wrongIds.contains(1010L));
 
         wrongIds = explorer.findWrongIds("1188511880-1188511890");
         assertEquals(1, wrongIds.size());
-        assertTrue(wrongIds.contains(1188511885));
+        assertTrue(wrongIds.contains(1188511885L));
 
         wrongIds = explorer.findWrongIds("222220-222224");
         assertEquals(1, wrongIds.size());
-        assertTrue(wrongIds.contains(222222));
+        assertTrue(wrongIds.contains(222222L));
 
         wrongIds = explorer.findWrongIds("1698522-1698528");
         assertEquals(0, wrongIds.size());
 
         wrongIds = explorer.findWrongIds("446443-446449");
         assertEquals(1, wrongIds.size());
-        assertTrue(wrongIds.contains(446446));
+        assertTrue(wrongIds.contains(446446L));
 
         wrongIds = explorer.findWrongIds("38593856-38593862");
         assertEquals(1, wrongIds.size());
-        assertTrue(wrongIds.contains(38593859));
+        assertTrue(wrongIds.contains(38593859L));
+
+
     }
 
     @Test
