@@ -3,13 +3,14 @@ package it.bitrock.adventofcode._2025.day1.safe;
 import java.util.List;
 
 public abstract class AbstractSafe implements Safe {
-
+    private static final Integer INITIAL_POSITION = 50;
+    protected static final Integer TOTAL_POSITIONS = 100;
     protected Integer position;
     protected Integer zeroClicks = 0;
     private final StringBuilder output = new StringBuilder();
 
     protected AbstractSafe() {
-        this.position = 50;
+        this.position = INITIAL_POSITION;
     }
 
     public void rotate(List<String> commands) {
@@ -35,6 +36,10 @@ public abstract class AbstractSafe implements Safe {
         System.out.println(output.toString());
         output.setLength(0);
     }
+
+    protected abstract void clockwiseRotation(Integer amount);
+
+    protected abstract void counterClockwiseRotation(Integer amount);
 
     protected void appendOutput() {
         output.append("New position: ").append(position).append(", Total zero clicks: ").append(zeroClicks).append("\n");
