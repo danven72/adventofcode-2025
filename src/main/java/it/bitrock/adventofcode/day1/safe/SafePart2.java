@@ -1,7 +1,7 @@
 package it.bitrock.adventofcode.day1.safe;
 
 
-public class SafeDay1Part2 extends AbstractSafe {
+public class SafePart2 extends AbstractSafe {
 
     public void clockwiseRotation(Integer amount) {
         Integer zeroClicksAfterAmounts = (position + amount) / TOTAL_POSITIONS;

@@ -1,11 +1,11 @@
 package it.bitrock.adventofcode.day1;
 
-import it.bitrock.adventofcode.day1.safe.SafeDay1Part2;
+import it.bitrock.adventofcode.day1.safe.SafePart2;
 
 public class Day1Ex2 extends AbstractDay1 {
 
     public Day1Ex2()  {
-        super(new SafeDay1Part2());
+        super(new SafePart2());
     }
 
     static void main() throws Exception {
