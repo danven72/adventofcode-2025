@@ -1,9 +1,17 @@
 package it.bitrock.adventofcode.day2;
 
+import it.bitrock.adventofcode.day2.checker.IdChecker;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class IdRangesExplorer {
+
+    private IdChecker idChecker;
+
+    public IdRangesExplorer(IdChecker idChecker) {
+        this.idChecker = idChecker;
+    }
 
     public Long sumWrongIds(List<String> idsIntervalList) {
         Long sum = 0l;
@@ -20,7 +28,7 @@ public class IdRangesExplorer {
         List<Long> wrongIds = new ArrayList<>();
         for (long i = Long.parseLong(idsInterval[0]); i <= Long.parseLong(idsInterval[1]); i++) {
             String id = String.valueOf(i);
-            if (isWrongId(id)) {
+            if (idChecker.isWrongId(id)) {
                 wrongIds.add(i);
             }
         }
@@ -31,6 +39,7 @@ public class IdRangesExplorer {
         return idIntervalsAsString.split("-");
     }
 
+    /*
     public boolean isWrongId(String id) {
         boolean wrong = false;
         String[] parts = splitInMiddle(id);
@@ -49,5 +58,7 @@ public class IdRangesExplorer {
                 s.substring(mid)
         };
     }
+
+     */
 
 }

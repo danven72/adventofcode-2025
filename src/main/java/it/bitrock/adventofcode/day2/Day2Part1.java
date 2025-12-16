@@ -1,5 +1,7 @@
 package it.bitrock.adventofcode.day2;
 
+import it.bitrock.adventofcode.day2.checker.IdCheckerPartOne;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -22,8 +24,8 @@ public class Day2Part1 {
     public static void main(String[] args) throws Exception {
         Day2Part1 day2Part1 = new Day2Part1();
         List<String> idRanges = day2Part1.loadInput();
-        //System.out.println("Loaded " + idRanges + " idRanges");
-        IdRangesExplorer idRangesExplorer = new IdRangesExplorer();
+        // System.out.println("Loaded " + idRanges + " idRanges");
+        IdRangesExplorer idRangesExplorer = new IdRangesExplorer(new IdCheckerPartOne());
         System.out.println("Sum of fully Wrongs IDs: " +idRangesExplorer.sumWrongIds(idRanges));
     }
 }
