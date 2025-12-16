@@ -11,5 +11,7 @@ public class MainPart1 extends AbstractDay2 {
     static void main(String[] args) throws Exception {
         MainPart1 mainPart1 = new MainPart1();
         mainPart1.printOutput();
+
+        //expected output: 18893502033
     }
 }

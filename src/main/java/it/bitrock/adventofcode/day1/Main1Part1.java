@@ -11,5 +11,6 @@ public class Main1Part1 extends AbstractDay1 {
     static void main() throws Exception {
         Main1Part1 day1 = new Main1Part1();
         day1.printOutput();
+        //expected output: 1129
     }
 }
