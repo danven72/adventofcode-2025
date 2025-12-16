@@ -7,10 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class IdCheckerPartTwoTest {
 
     @Test
-    void testCountRepetitions() {
+    void testHasRepetitions() {
         IdCheckerPartTwo checker = new IdCheckerPartTwo();
-        //assertFalse(checker.hasRepetitions("919"));
-        //assertTrue(checker.hasRepetitions("9191"));
         assertTrue(checker.hasRepetitions("1188511885"));
         assertFalse(checker.hasRepetitions("8"));
     }
