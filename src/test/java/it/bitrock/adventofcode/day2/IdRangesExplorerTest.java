@@ -95,5 +95,74 @@ class IdRangesExplorerTest {
             assertEquals("100", intervals[0]);
             assertEquals("200", intervals[1]);
         }
+
+        @Test
+        void testFindWrongIds() {
+            var wrongIds = explorer.findWrongIds("11-22");
+            assertEquals(2, wrongIds.size());
+            assertTrue(wrongIds.contains(11L));
+            assertTrue(wrongIds.contains(22L));
+
+            wrongIds = explorer.findWrongIds("95-115");
+            assertEquals(2L, wrongIds.size());
+            assertTrue(wrongIds.contains(99L));
+            assertTrue(wrongIds.contains(111L));
+
+            wrongIds = explorer.findWrongIds("998-1012");
+            assertEquals(2, wrongIds.size());
+            assertTrue(wrongIds.contains(999L));
+            assertTrue(wrongIds.contains(1010L));
+
+            wrongIds = explorer.findWrongIds("1188511880-1188511890");
+            assertEquals(1, wrongIds.size());
+            assertTrue(wrongIds.contains(1188511885L));
+
+            wrongIds = explorer.findWrongIds("222220-222224");
+            assertEquals(1, wrongIds.size());
+            assertTrue(wrongIds.contains(222222L));
+
+            wrongIds = explorer.findWrongIds("1698522-1698528");
+            assertEquals(0, wrongIds.size());
+
+            wrongIds = explorer.findWrongIds("446443-446449");
+            assertEquals(1, wrongIds.size());
+            assertTrue(wrongIds.contains(446446L));
+
+            wrongIds = explorer.findWrongIds("38593856-38593862");
+            assertEquals(1, wrongIds.size());
+            assertTrue(wrongIds.contains(38593859L));
+
+            wrongIds = explorer.findWrongIds("565653-565659");
+            assertEquals(1, wrongIds.size());
+            assertTrue(wrongIds.contains(565656L));
+
+            wrongIds = explorer.findWrongIds("824824821-824824827");
+            assertEquals(1, wrongIds.size());
+            assertTrue(wrongIds.contains(824824824L));
+
+            wrongIds = explorer.findWrongIds("2121212118-2121212124");
+            assertEquals(1, wrongIds.size());
+            assertTrue(wrongIds.contains(2121212121L));
+        }
+
+        @Test
+        void testSumWrongIds() {
+            List<String> idsIntervalList = List.of(
+                    "11-22",
+                    "95-115",
+                    "998-1012",
+                    "1188511880-1188511890",
+                    "222220-222224",
+                    "1698522-1698528",
+                    "446443-446449",
+                    "38593856-38593862",
+                    "565653-565659",
+                    "824824821-824824827",
+                    "2121212118-2121212124"
+            );
+            Long sum = explorer.sumWrongIds(idsIntervalList);
+            assertEquals(4174379265L, sum);
+        }
+
     }
 }

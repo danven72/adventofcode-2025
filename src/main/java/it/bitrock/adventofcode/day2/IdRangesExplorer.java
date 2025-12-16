@@ -14,7 +14,7 @@ public class IdRangesExplorer {
     }
 
     public Long sumWrongIds(List<String> idsIntervalList) {
-        Long sum = 0l;
+        Long sum = 0L;
         for (String idsIntervalAsString: idsIntervalList) {
             List<Long> wrongIds = findWrongIds(idsIntervalAsString);
             System.out.println("Wrong IDs in interval " + idsIntervalAsString + ": " + wrongIds);

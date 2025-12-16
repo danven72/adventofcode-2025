@@ -20,5 +20,4 @@ public class IdCheckerPartOne implements IdChecker {
                 s.substring(mid)
         };
     }
-
 }
