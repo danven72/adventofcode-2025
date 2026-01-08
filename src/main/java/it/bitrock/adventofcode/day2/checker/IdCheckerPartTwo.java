@@ -4,6 +4,7 @@ import it.bitrock.adventofcode.day2.checker.util.StringSplitter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class IdCheckerPartTwo implements IdChecker {
 
@@ -49,6 +50,16 @@ public class IdCheckerPartTwo implements IdChecker {
             }
         }
         return hasRepetitions;
+    }
+
+    // This is how AI would implement it :-O
+    protected boolean hasRepetitionsAI(String inputString) {
+        int inputLength = inputString.length();
+        return inputLength > 1 &&
+                IntStream.rangeClosed(1, (inputLength + 1) / 2)
+                        .filter(seqLen -> inputLength % seqLen == 0)
+                        .mapToObj(seqLen -> inputString.substring(0, seqLen).repeat(inputLength / seqLen))
+                        .anyMatch(repeated -> repeated.contentEquals(inputString));
     }
 
     /**
